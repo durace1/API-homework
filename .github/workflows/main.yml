@@ -30,3 +30,14 @@ jobs:
        
       - name: test
         run: npm run test
+#cохраняем отчет pw/allure
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        continue-on-error: true
+        with:
+          #или test-result
+          name: allure-results #test-result
+          #или test-result
+          path: allure-results
+          retention-days: 3
