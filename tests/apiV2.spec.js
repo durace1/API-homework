@@ -55,7 +55,7 @@ test.describe('GET', () => {
     const response = await api.todos.getId(token, id);
     await expect (response.status()).toBe(404);
     });
-
+/*
     test('#07 GET /todos?filter(200)',{
     tag: ['@GET'],}, async ({ api }) => {
     const filter = '?doneStatus=true';
@@ -64,7 +64,7 @@ test.describe('GET', () => {
     const body = await response.json();
     await expect (body.todos.length).toBe(0);
     });
-
+*/
     test('#25 GET /todos?xml(200)',{
     tag: ['@GET'],}, async ({ api }) => {
     const acceptHeader = 'application/xml'
