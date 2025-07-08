@@ -1,6 +1,6 @@
   # Название workflow
-  name: e2e playwright
-
+name: e2e playwright
+#Триггер когда запускать
 on:
   push:
     branches: [api, main, master]
@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #делаем чекаут кода
-      -uses: action/checkout@v4.2.2
-      -uses: setup-node@v4.4.0
+      -uses: actions/checkout@v4
+      -uses: actions/setup-node@v4
        with:
          node-version: lts/*
       -name: install npm package
        run: npm i
       -name: install pw
-       run: npx playwright --with-deps
+       run: npx playwright install --with-deps
       -name: test
        run: npm run test
